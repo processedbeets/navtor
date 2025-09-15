@@ -13,6 +13,8 @@ import { providePrimeNG } from 'primeng/config';
 import { appRoutes } from './app.routes';
 import { vesselReducer } from './store/vessel/vessel.reducer';
 import { VesselEffects } from './store/vessel/vessel.effects';
+import { emissionsReducer } from './store/emissions/emissions.reducer';
+import { EmissionsEffects } from './store/emissions/emissions.effects';
 import Aura from '@primeuix/themes/aura';
 
 export const appConfig: ApplicationConfig = {
@@ -31,8 +33,11 @@ export const appConfig: ApplicationConfig = {
         },
       },
     }),
-    provideStore({ vessels: vesselReducer }),
-    provideEffects([VesselEffects]),
+    provideStore({ 
+      vessels: vesselReducer,
+      emissions: emissionsReducer 
+    }),
+    provideEffects([VesselEffects, EmissionsEffects]),
     provideStoreDevtools({
       maxAge: 25,
       logOnly: false,

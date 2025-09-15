@@ -14,14 +14,11 @@ export class VesselEffects {
     this.actions$.pipe(
       ofType(VesselActions.loadVessels),
       switchMap(() => {
-        console.log('VesselEffects: Loading vessels...');
         return this.vesselService.getVessels().pipe(
           map((vessels) => {
-            console.log('VesselEffects: Vessels loaded successfully:', vessels);
             return VesselActions.loadVesselsSuccess({ vessels });
           }),
           catchError((error) => {
-            console.error('VesselEffects: Error loading vessels:', error);
             return of(
               VesselActions.loadVesselsFailure({ error: error.message })
             );

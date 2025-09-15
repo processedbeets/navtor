@@ -12,7 +12,6 @@ export class VesselService {
     'https://frontendteamfiles.blob.core.windows.net/exercises/vessels.json';
 
   getVessels(): Observable<Vessel[]> {
-    console.log('Fetching vessels from:', this.apiUrl);
     return this.http.get<Vessel[]>(this.apiUrl);
   }
 }

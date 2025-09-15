@@ -49,7 +49,6 @@ export class VesselsComponent implements OnInit {
     this.vesselFacade.loadVessels();
 
     this.vesselFacade.vessels$.subscribe((vessels: Vessel[]) => {
-      console.log('Vessels loaded:', vessels);
       this.rowData = vessels;
     });
 
