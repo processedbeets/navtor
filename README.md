@@ -1,82 +1,155 @@
-# Org
+# Navtor - Vessel Management System
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A modern Angular application for managing vessel data and emissions tracking, built with Nx workspace and powered by PrimeNG components.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## 🚢 Features
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+### Vessel Management
+- **Vessel List**: Display vessel information in a data grid with sorting and filtering
+- **Vessel Details**: View comprehensive vessel data including MMSI, IMO, company information, and vessel type
+- **Real-time Data**: Fetch vessel data from external API endpoints
 
-## Finish your CI setup
+### Emissions Tracking
+- **Interactive Charts**: Visualize vessel emissions data using Highcharts
+- **Multiple Emission Types**: Track NOx, Methane, PM, and SOx emissions
+- **Vessel Selection**: Dropdown to switch between different vessels
+- **Time Series Data**: Historical emissions data with interactive line charts
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/DKCXlSHAhK)
+### Technical Features
+- **Modern Angular**: Built with Angular 20+ using standalone components and signals
+- **State Management**: NgRx for predictable state management
+- **Responsive Design**: Mobile-friendly UI with PrimeNG components
+- **Type Safety**: Full TypeScript implementation with strict typing
+- **Testing**: Comprehensive test coverage with Vitest and Playwright
 
+## 🏗️ Architecture
 
-## Run tasks
+The application follows a domain-driven design approach with clear separation of concerns:
 
-To run the dev server for your app, use:
+```
+src/app/
+├── domains/
+│   ├── vessels/           # Vessel management domain
+│   │   ├── models/        # Vessel data models
+│   │   ├── services/      # API services
+│   │   ├── store/         # NgRx state management
+│   │   ├── facades/       # Business logic facades
+│   │   └── pages/         # Vessel components
+│   └── emissions/         # Emissions tracking domain
+│       ├── models/        # Emissions data models
+│       ├── services/      # API services
+│       ├── store/         # NgRx state management
+│       ├── facades/       # Business logic facades
+│       └── pages/         # Emissions components
+├── components/
+│   └── navigation/        # Shared navigation component
+└── app.config.ts         # Application configuration
+```
 
-```sh
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+```bash
+# Install dependencies
+npm install
+
+# Start development server
 npx nx serve navtor
 ```
 
-To create a production bundle:
+The application will be available at `http://localhost:4200`
 
-```sh
-npx nx build navtor
+### Available Scripts
+
+```bash
+# Development
+npx nx serve navtor          # Start dev server
+npx nx build navtor          # Build for production
+
+# Testing
+npx nx test navtor           # Run unit tests
+npx nx e2e navtor-e2e        # Run E2E tests
+
+# Code Quality
+npx nx lint navtor           # Run linting
+npx nx format                 # Format code
 ```
 
-To see all available targets to run for a project, run:
+## 🧪 Testing
 
-```sh
-npx nx show project navtor
-```
+The project includes comprehensive testing at multiple levels:
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+### Unit Tests (Vitest)
+- **60 tests** covering all domains
+- Component testing with Angular Testing Utilities
+- Service testing with HTTP mocking
+- Store/Reducer testing with state validation
+- Facade testing with business logic coverage
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### End-to-End Tests (Playwright)
+- Navigation testing
+- User interaction testing
+- Chart rendering validation
+- API integration testing
 
-## Add new projects
+### Test Coverage
+- Components: 8 tests (vessels) + 11 tests (emissions)
+- Services: 4 tests (vessels) + 6 tests (emissions)
+- Facades: 5 tests (vessels) + 13 tests (emissions)
+- Store: 4 tests (vessels) + 5 tests (emissions)
+- App-level: 4 tests
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+## 🛠️ Technology Stack
 
-Use the plugin's generator to create new projects.
+- **Frontend**: Angular 20+ with standalone components
+- **UI Library**: PrimeNG with PrimeIcons
+- **Charts**: Highcharts for data visualization
+- **State Management**: NgRx with effects and facades
+- **Testing**: Vitest (unit) + Playwright (E2E)
+- **Build Tool**: Nx workspace with Vite
+- **Styling**: CSS with PrimeNG theming
 
-To generate a new application, use:
+## 📊 Data Sources
 
-```sh
-npx nx g @nx/angular:app demo
-```
+- **Vessels API**: `https://frontendteamfiles.blob.core.windows.net/exercises/vessels.json`
+- **Emissions API**: `https://frontendteamfiles.blob.core.windows.net/exercises/emissions.json`
 
-To generate a new library, use:
+## 🎨 UI Components
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
+- **Navigation**: Responsive menubar with PrimeNG
+- **Data Grid**: AG Grid for vessel data display
+- **Charts**: Highcharts line charts for emissions visualization
+- **Forms**: PrimeNG dropdowns and form controls
+- **Theming**: Custom CSS with PrimeNG styling
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## 🔧 Development
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Code Organization
+- Domain-driven architecture with clear boundaries
+- Shared components in `/components`
+- Domain-specific code in `/domains`
+- Centralized state management with NgRx
+- Service layer for API communication
 
+### Best Practices
+- TypeScript strict mode enabled
+- ESLint configuration for code quality
+- Consistent naming conventions
+- Comprehensive error handling
+- Responsive design principles
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📝 License
 
-## Install Nx Console
+This project is part of a technical assessment and is for demonstration purposes.
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+## 🤝 Contributing
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+This is a technical assessment project. For questions or feedback, please refer to the project requirements.
 
-## Useful links
+---
 
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Built with ❤️ using Angular, Nx, and modern web technologies.
