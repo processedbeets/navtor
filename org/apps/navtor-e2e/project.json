@@ -1,0 +1,9 @@
+{
+  "name": "navtor-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/navtor-e2e/src",
+  "implicitDependencies": ["navtor"],
+  "// targets": "to see all targets run: nx show project navtor-e2e --web",
+  "targets": {}
+}
