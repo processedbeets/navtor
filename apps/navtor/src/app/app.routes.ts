@@ -9,14 +9,14 @@ export const appRoutes: Route[] = [
   {
     path: 'vessels',
     loadComponent: () =>
-      import('./pages/vessels/vessels.component').then(
+      import('./domains/vessels/pages/vessels/vessels.component').then(
         (m) => m.VesselsComponent
       ),
   },
   {
     path: 'emissions',
     loadComponent: () =>
-      import('./pages/emissions/emissions.component').then(
+      import('./domains/emissions/pages/emissions/emissions.component').then(
         (m) => m.EmissionsComponent
       ),
   },

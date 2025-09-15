@@ -11,10 +11,10 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import { appRoutes } from './app.routes';
-import { vesselReducer } from './store/vessel/vessel.reducer';
-import { VesselEffects } from './store/vessel/vessel.effects';
-import { emissionsReducer } from './store/emissions/emissions.reducer';
-import { EmissionsEffects } from './store/emissions/emissions.effects';
+import { vesselReducer } from './domains/vessels/store/vessel/vessel.reducer';
+import { VesselEffects } from './domains/vessels/store/vessel/vessel.effects';
+import { emissionsReducer } from './domains/emissions/store/emissions/emissions.reducer';
+import { EmissionsEffects } from './domains/emissions/store/emissions/emissions.effects';
 import Aura from '@primeuix/themes/aura';
 
 export const appConfig: ApplicationConfig = {
@@ -33,9 +33,9 @@ export const appConfig: ApplicationConfig = {
         },
       },
     }),
-    provideStore({ 
+    provideStore({
       vessels: vesselReducer,
-      emissions: emissionsReducer 
+      emissions: emissionsReducer,
     }),
     provideEffects([VesselEffects, EmissionsEffects]),
     provideStoreDevtools({

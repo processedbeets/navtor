@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { EmissionData, ChartSeries } from '../models/emissions.model';
@@ -9,6 +9,8 @@ import * as EmissionsSelectors from '../store/emissions/emissions.selectors';
   providedIn: 'root',
 })
 export class EmissionsFacade {
+  private readonly store = inject(Store);
+
   // Selectors
   readonly emissions$: Observable<EmissionData[]>;
   readonly loading$: Observable<boolean>;
@@ -17,7 +19,7 @@ export class EmissionsFacade {
   readonly selectedVesselId$: Observable<number | null>;
   readonly selectedVesselEmissions$: Observable<EmissionData[]>;
 
-  constructor(private readonly store: Store) {
+  constructor() {
     this.emissions$ = this.store.select(EmissionsSelectors.selectAllEmissions);
     this.loading$ = this.store.select(
       EmissionsSelectors.selectEmissionsLoading
