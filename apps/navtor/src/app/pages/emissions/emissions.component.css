@@ -1,0 +1,30 @@
+.emissions-container {
+  padding: 24px;
+  min-height: 100vh;
+  background-color: var(--p-surface-0);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+h1 {
+  color: var(--p-surface-contrast-color);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.025em;
+}
+
+.content {
+  background: var(--p-surface-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--p-primary-color);
+  padding: 24px;
+  text-align: center;
+}
+
+.message {
+  color: var(--p-surface-contrast-color);
+  font-size: 16px;
+  margin: 0;
+}

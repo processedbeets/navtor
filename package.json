@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@angular/animations": "~20.2.0",
     "@angular/common": "~20.2.0",
     "@angular/compiler": "~20.2.0",
     "@angular/core": "~20.2.0",
@@ -14,12 +15,13 @@
     "@ngrx/effects": "^20.0.1",
     "@ngrx/store": "^20.0.1",
     "@ngrx/store-devtools": "^20.0.1",
+    "@primeuix/themes": "^1.2.3",
     "ag-grid-angular": "^34.2.0",
     "ag-grid-community": "^34.2.0",
     "highcharts": "^12.2.0",
     "highcharts-angular": "^5.1.0",
-    "primeng": "^20.1.2",
     "primeicons": "^7.0.0",
+    "primeng": "^20.1.2",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
   },

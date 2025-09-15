@@ -1,0 +1,48 @@
+/* Dark theme overrides for PrimeNG Menubar */
+:host ::ng-deep .p-menubar {
+  background-color: #1e293b !important;
+  border: none !important;
+  border-bottom: 1px solid #3b82f6 !important;
+  border-radius: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list {
+  background-color: #1e293b !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link {
+  color: white !important;
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link:focus {
+  background-color: #2563eb !important;
+  color: white !important;
+  box-shadow: 0 0 0 2px #3b82f6 !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link.router-link-active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-icon {
+  color: white !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link:hover .p-menuitem-icon {
+  color: white !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link.router-link-active .p-menuitem-icon {
+  color: white !important;
+}

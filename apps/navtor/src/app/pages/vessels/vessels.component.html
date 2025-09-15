@@ -1,0 +1,23 @@
+<div class="vessels-container">
+  <h1>Vessels</h1>
+
+  @if (loading()) {
+  <div class="loading">Loading vessels...</div>
+  } @if (error()) {
+  <div class="error">Error: {{ error() }}</div>
+  }
+
+  <div class="content">
+    <ag-grid-angular
+      [theme]="quartzTheme"
+      loadThemeGoogleFonts="true"
+      class="ag-grid-container"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationPageSize]="20"
+      [paginationPageSizeSelector]="[10, 20, 50, 100]"
+    />
+  </div>
+</div>
