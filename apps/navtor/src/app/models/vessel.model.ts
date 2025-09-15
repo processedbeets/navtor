@@ -8,15 +8,6 @@ export interface Vessel {
   startDate: string;
   active: boolean;
   vesselType: string;
-  length?: number;
-  width?: number;
-  draft?: number;
-  grossTonnage?: number;
-  deadweight?: number;
-  yearBuilt?: number;
-  flag?: string;
-  callSign?: string;
-  status?: string;
 }
 
 export interface VesselState {
