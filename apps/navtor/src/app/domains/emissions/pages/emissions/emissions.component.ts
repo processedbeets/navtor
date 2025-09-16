@@ -29,33 +29,31 @@ import * as Highcharts from 'highcharts';
           [disabled]="loading"
         >
           <option value="" disabled>Select a vessel</option>
-          <option *ngFor="let vessel of vesselOptions" [ngValue]="vessel">
+          @for (vessel of vesselOptions; track vessel.id) {
+          <option [ngValue]="vessel">
             {{ vessel.name }}
           </option>
+          }
         </select>
       </div>
 
-      <div
-        class="chart-container"
-        *ngIf="!loading && !error && chartData.length > 0"
-      >
-        <div #chartContainer style="width: 100%; height: 500px;"></div>
-      </div>
-
-      <div class="loading-container" *ngIf="loading">
+      @if (loading) {
+      <div class="loading-container">
         <p>Loading emissions data...</p>
       </div>
-
-      <div class="error-container" *ngIf="error">
+      } @else if (error) {
+      <div class="error-container">
         <p>Error loading data: {{ error }}</p>
       </div>
-
-      <div
-        class="no-data-container"
-        *ngIf="!loading && !error && chartData.length === 0"
-      >
+      } @else if (chartData.length > 0) {
+      <div class="chart-container">
+        <div #chartContainer style="width: 100%; height: 500px;"></div>
+      </div>
+      } @else {
+      <div class="no-data-container">
         <p>No emissions data available.</p>
       </div>
+      }
     </div>
   `,
   styles: [
